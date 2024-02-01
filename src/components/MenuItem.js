@@ -14,8 +14,8 @@ const MenuItem = ({ title, imageFile, description, price, attribute }) => {
             <img src={require(`../images/${imageFile}`)} id="menuItem" alt={attribute}/>
             </div>
             <div className="col-6">
-                <h3>{title}</h3>
-                <h4>{description}</h4>
+                <h2>{title}</h2>
+                <p id='menuDescription' >{description}</p>
                 <div className="row">
                     <div className="col-6">
                         <h3 id="price">{`$${price}`}</h3>

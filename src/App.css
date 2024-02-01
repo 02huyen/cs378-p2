@@ -6,9 +6,6 @@ body {
   background-color: #F1EFE7 !important;
   color: black;
 }
-.menu {
-  color: rgb(0, 0, 0);
-}
 img {
   padding: 0; 
   margin: 0;
@@ -26,12 +23,20 @@ h1 {
 }
 h2 {
   font-size: 140%;
-  text-align: center;
+  text-align: left;
   margin-top: 20px;
+  margin-bottom: 0%;
 }
-h4 {
+h3 {
+  font-weight: 400 !important;
+  font-size: 130% !important;
+}
+p {
   font-weight: 350 !important;
-  font-size: larger !important;
+  font-size: 130% !important;
+  margin-top: none;
+  margin-bottom: 0% !important;
+  line-height: 1.1;
 }
 textarea {
   width: 90%;
@@ -49,9 +54,9 @@ button {
   text-align: center; 
   background-color: black !important;
   border: none !important;
-  margin-top: 5% !important;
   margin-left: 50% !important;
-  height: 70% !important;
+  height: 60% !important;
+  margin-top: 8% !important;
 }
 
 .col-4 {
@@ -69,10 +74,10 @@ button {
   height: 120px;
 }
 #price {
-  font-weight: 400;
+  font-weight: 410;
   font-size: larger;
   margin-left: 10%;
-  margin-top: 7%;
+  margin-top: 8% !important;
 }
 #cafelabel {
   font-family: Snell Roundhand;
