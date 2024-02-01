@@ -1,5 +1,6 @@
 import './App.css';
 import MenuItem from './components/MenuItem';
+import Logo from './components/Logo'
 
 // import 'bootstrap/dist/css/bootstrap.min.css'; // This imports bootstrap css styles. You can use bootstrap or your own classes by using the className attribute in your elements.
 
@@ -82,8 +83,7 @@ const menuItems = [
 function App() {
   return (
     <div>
-      {/* https://stackoverflow.com/questions/34582405/react-wont-load-local-images */}
-      <img src={require("./images/logo.jpg")} id='logo' alt="BonBon Cafe logo"/>
+      <Logo logoName={'logo.jpg'} description={"BonBon Cafe logo"} />
       <h3 id="cafelabel">Affordable meals made from-scratch</h3>
       <h3 id="cafereview">Voted best cafe at UT!</h3>
       <div className="menu">
