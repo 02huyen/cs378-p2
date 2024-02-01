@@ -54,7 +54,7 @@ button {
   text-align: center; 
   background-color: black !important;
   border: none !important;
-  margin-left: 50% !important;
+  margin-left: 55% !important;
   height: 60% !important;
   margin-top: 8% !important;
 }
@@ -70,7 +70,6 @@ button {
 #menuItem {
   border-radius: 15px;
   margin-bottom: 20%;
-  margin-left: 5%;
   height: 120px;
 }
 #price {
