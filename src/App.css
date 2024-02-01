@@ -75,13 +75,14 @@ button {
 }
 #cafelabel {
   font-family: Snell Roundhand;
-  font-size: medium;
-  display: block;
-  border: none;
-  background-color: #F1EFE7;
-  width: 75%;
+  font-size: x-large;
   margin-left: auto;
   margin-right: auto;
+  display: block;
+  align-items: center;
+  text-align: center;
+  border: none;
+  width: 75%;
 }
 #cafereview {
   margin-left: auto;

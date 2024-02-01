@@ -84,7 +84,7 @@ function App() {
     <div>
       {/* https://stackoverflow.com/questions/34582405/react-wont-load-local-images */}
       <img src={require("./images/logo.jpg")} id='logo' alt="BonBon Cafe logo"/>
-      <h3 id="cafelabel">Delicious and Affordable From-Scratch Recipes</h3>
+      <h3 id="cafelabel">Affordable meals made from-scratch</h3>
       <h3 id="cafereview">Voted best cafe at UT!</h3>
       <div className="menu">
         {/* Display menu items dynamicaly here by iterating over the provided menuItems */}
