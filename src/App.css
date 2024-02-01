@@ -2,7 +2,93 @@
   Style your elements by creating CSS classes here.
   Below, you can see an example of a class called "menu" that changes the color of the text to blue. Modify according to your needs.
 */
-
+body {
+  background-color: #F1EFE7 !important;
+  color: black;
+}
 .menu {
-  color: blue;
+  color: rgb(0, 0, 0);
+}
+img {
+  padding: 0; 
+  margin: 0;
+  display: block;
+  width: 80%;
+  margin-left: none;
+  margin-right: auto;
+}
+#logo {
+  margin-left: auto;
+}
+h1 {
+  text-align: center;
+}
+h2 {
+  font-size: 140%;
+  text-align: center;
+  margin-top: 20px;
+}
+h4 {
+  font-weight: 350 !important;
+  font-size: larger !important;
+}
+textarea {
+  width: 90%;
+  background-color: #F1EFE7;
+  border: none;
+  padding: 0;
+  font-weight: 300;
+}
+button {
+  display: flex !important; 
+  align-items: center !important; 
+  justify-content: center !important;
+  width: 50%;
+  border-radius: 25px !important;
+  text-align: center; 
+  background-color: black !important;
+  border: none !important;
+  margin-top: 5% !important;
+  margin-left: 35% !important;
+  height: 70% !important;
+}
+
+.col-4 {
+  padding: 0 !important;
+  margin-left: 8%;
+  border: none;
+}
+.col-6 {
+  padding: 0 !important;
+}
+#menuItem {
+  border-radius: 15px;
+  margin-bottom: 20%;
+  margin-left: 5%;
+  height: 120px;
+}
+#price {
+  font-weight: 400;
+  font-size: larger;
+  margin-left: 10%;
+  margin-top: 7%;
+}
+#cafelabel {
+  font-family: Snell Roundhand;
+  font-size: medium;
+  display: block;
+  border: none;
+  background-color: #F1EFE7;
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+}
+#cafereview {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  align-items: center;
+  text-align: center;
+  width: 75%;
+  margin-bottom: 20%;
 }

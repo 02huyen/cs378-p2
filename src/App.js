@@ -82,10 +82,21 @@ const menuItems = [
 function App() {
   return (
     <div>
-      <h1>Menu</h1>
+      {/* https://stackoverflow.com/questions/34582405/react-wont-load-local-images */}
+      <img src={require("./images/logo.jpg")} id='logo' alt="BonBon Cafe logo"/>
+      <h3 id="cafelabel">Delicious and Affordable From-Scratch Recipes</h3>
+      <h3 id="cafereview">Voted best cafe at UT!</h3>
       <div className="menu">
         {/* Display menu items dynamicaly here by iterating over the provided menuItems */}
-        <MenuItem title={menuItems[0].title} /> {/* Example for how to use a component */}
+        {menuItems.map((menuItem) => (
+          <MenuItem 
+            key={menuItem.id}
+            title={menuItem.title}
+            imageFile={menuItem.imageName}
+            description={menuItem.description}
+            price={menuItem.price}
+            attribute={menuItem.description} />
+        ))}
       </div>
     </div>
   );
