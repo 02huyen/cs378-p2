@@ -1,7 +1,9 @@
 import './App.css';
+import React, { useState } from 'react';
 import MenuItem from './components/MenuItem';
 import Logo from './components/Logo'
 import CafeDescription from './components/CafeDescription';
+import OrderRow from './components/OrderRow';
 
 // import 'bootstrap/dist/css/bootstrap.min.css'; // This imports bootstrap css styles. You can use bootstrap or your own classes by using the className attribute in your elements.
 
@@ -83,8 +85,42 @@ const menuItems = [
 const slogan = "Affordable meals made from-scratch"
 const review = "Voted best cafe at UT"
 
+let initialCartItems = new Array(menuItems.length).fill(0)
 
 function App() {
+  const [totalPrice, setTotalPrice] = useState(0);
+  const [cartItems, setCartItems] = useState(initialCartItems)
+
+  const clearCart = () => {
+    setTotalPrice(0)
+    const updatedCart = cartItems.map(item => { return 0 })
+    setCartItems(updatedCart)
+  }
+
+  const addToCart = (menuItem) => {
+    setTotalPrice(totalPrice + menuItem.price)
+    const updatedCart = cartItems.map((item, itemId) => {
+      if (menuItem.id - 1 === itemId)
+        return item + 1
+      else
+        return item
+    })
+    setCartItems(updatedCart)
+  }
+
+  const removeFromCart = (menuItem) => {
+    if (cartItems[menuItem.id - 1] === 0)
+      return
+    setTotalPrice(totalPrice - menuItem.price)
+    const updatedCart = cartItems.map((item, itemId) => {
+      if (menuItem.id - 1 === itemId)
+        return item - 1
+      else
+        return item
+    })
+    setCartItems(updatedCart)
+  }
+
   return (
     <div>
       <Logo logoName={'logo.jpg'} description={"BonBon Cafe logo"} />
@@ -92,14 +128,25 @@ function App() {
       <div className="menu">
         {/* Display menu items dynamicaly here by iterating over the provided menuItems */}
         {menuItems.map((menuItem) => (
-          <MenuItem 
+            <MenuItem 
             key={menuItem.id}
             title={menuItem.title}
             imageFile={menuItem.imageName}
             description={menuItem.description}
             price={menuItem.price}
-            attribute={menuItem.description} />
+            addToCart={() => addToCart(menuItem)}
+            removeFromCart={() => removeFromCart(menuItem)}
+            getNumInCart={cartItems[menuItem.id - 1]}
+          />
         ))}
+      </div>
+      <div className="cart">
+          <OrderRow 
+            subtotal={Math.abs(totalPrice).toFixed(2)}
+            clearCart={() => clearCart()}
+            getOrder={cartItems}
+            getMenuData={menuItems} 
+            />
       </div>
     </div>
   );
