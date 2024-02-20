@@ -8,9 +8,16 @@ import CustomLightButton from './CustomLightButton';
 const InformationFormModal = ({ completeOrder, menuData, subTotal }) => {
     const [isOpen, setIsOpen] = useState(false)
     const [orderComplete, setOrderComplete] = useState(false)
+    const [noItemsInCart, setNoItemsInCart] = useState(false)
 
     const open = () => {
-        setIsOpen(true)
+        if (parseFloat(subTotal) === 0) {
+            setNoItemsInCart(true)
+        }
+        else {
+            setIsOpen(true)
+        }
+            
     }
     const close = () => {
         setIsOpen(false)
@@ -61,10 +68,18 @@ const InformationFormModal = ({ completeOrder, menuData, subTotal }) => {
             <h3 id='confirmed-order-title'>Your order is confirmed!</h3>
             <div className='row'>
                 <div className='col'>
-                    <CustomButton text={'Finish'} onClickAction={orderCompleteClose} />
+                    <CustomButton text={'Ok!'} onClickAction={orderCompleteClose} />
                 </div>
           </div>
-            </Modal>
+        </Modal>
+        <Modal isOpen={noItemsInCart}>
+            <h3 id='confirmed-order-title'>There is nothing in your cart!</h3>
+            <div className='row'>
+                <div className='col'>
+                    <CustomButton text={'Finish'} onClickAction={() => setNoItemsInCart(false)} /> 
+                </div>
+            </div>
+        </Modal>                 
     </div>
     )      
 }
